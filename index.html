@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter your phone number</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap"
+          rel="stylesheet">
+
+    <style>
+        .jaro-font {
+            font-size: 3rem;
+            font-family: "Jaro", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .list-item {
+            font-size: 1.8rem;
+            text-decoration: underline;
+        }
+
+        .list-item a:hover {
+            opacity: 0.5;
+        }
+
+        .list-item a:visited {
+            color: orange;
+        }
+    </style>
+</head>
+<body class="bg-gray-200 flex flex-col">
+    <header class="w-full h-16 flex bg-blackhole grow-0">
+        <div class="w-full text-white flex justify-center items-center">
+            <span class="jaro-font">Enter your phone number</span>
+        </div>
+    </header>
+
+    <main class="flex grow">
+        <ol class="ml-12 mt-12 list-decimal">
+            <li class="list-item"><a href="/strategies/pi.html">Pi</a></li>
+            <li class="list-item"><a href="/confirm">Confirm</a></li>
+        </ol>
+    </main>
+
+    <footer class="w-full h-8 bg-clifford grow-0">
+
+    </footer>
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        blackhole: '#2c282d'
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

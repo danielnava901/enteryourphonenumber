@@ -1,0 +1,13 @@
+html,
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+@font-face {
+    font-family: "MagicVintageDemo";
+    src: url("../fonts/MagicVintageDemo-ALaoM.ttf") format("ttf"),
+    url("../fonts/MagicVintageDemo-ALaoM.ttf") format("ttf");
+}

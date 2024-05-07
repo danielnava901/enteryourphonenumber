@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles/index.css">
+
+    <title>Pi</title>
+
+    <style>
+        #pi {
+            font-size: 1.3rem;
+        }
+        #pi::first-letter {
+            font-size: 2.5rem;
+        }
+        .current {
+            background-color: #d7d0d0;
+            padding: 10px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-200 flex flex-col">
+    <div class="w-full h-8 flex justify-center">
+        <span class="font-bold text-3xl">PI</span>
+    </div>
+    <div class="w-full flex justify-center text-2xl">
+        <span class="mr-3">Your phone:</span>
+        <span id="phone" class="text-3xl font-bold"></span>
+    </div>
+    <div class="w-full flex justify-center">
+        <div class="mt-6 text-wrap text-center" id="pi"
+             style="
+            width: 700px;
+            word-break: break-all;"
+        >
+
+        </div>
+    </div>
+
+    <script src="../scripts/pi.js" type="application/javascript"></script>
+    <script>
+        const piDiv = document.getElementById("pi");
+        const phoneDiv = document.getElementById("phone");
+
+        let Pi;
+        let current = 0;
+
+        function init() {
+            Pi = PI_.trim()
+                .replaceAll(" ", "")
+                .replaceAll("\n", "")
+                .replaceAll("\t", "")
+            ;
+        }
+
+        function onMove(e) {
+            if(e.code === 'ArrowRight') {
+                current = current + 1;
+            }else if (e.code === 'ArrowLeft') {
+                current = current - 1;
+            }
+
+            renderPiAndPhone(current);
+        }
+
+        function renderPiAndPhone(current) {
+            console.log({current});
+            piDiv.innerHTML = `${Pi.substring(0, current)}
+                <span class="current">${Pi.substring(current, current + 10)}</span>
+                ${Pi.substring(current+10)}`;
+
+            phoneDiv.innerHTML = Pi.substring(current, current + 10);
+        }
+
+        window.addEventListener("load", function() {
+            init();
+            renderPiAndPhone(current);
+            window.onkeydown = onMove;
+        });
+    </script>
+</body>
+</html>
