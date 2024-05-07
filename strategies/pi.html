@@ -32,6 +32,11 @@
         <span class="mr-3">Your phone:</span>
         <span id="phone" class="text-3xl font-bold"></span>
     </div>
+    <div class="w-full flex justify-center text-md mt-12 mb-2">
+        <span style="
+            word-break: break-all;"
+        >Mueve las teclas de flecha Izquierda o Derecha para seleccionar tu número telefónico</span>
+    </div>
     <div class="w-full flex justify-center">
         <div class="mt-6 text-wrap text-center" id="pi"
              style="
@@ -53,6 +58,7 @@
         function init() {
             Pi = PI_.trim()
                 .replaceAll(" ", "")
+                .replaceAll(".", "")
                 .replaceAll("\n", "")
                 .replaceAll("\t", "")
             ;
